@@ -14,6 +14,7 @@ import org.joda.time.Days;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -21,11 +22,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebView.FindListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.Spinner;
+import android.widget.VideoView;
 
 import com.mao.shishu.AdvisorActivity;
 import com.mao.shishu.DoctorProfileActivity;
@@ -58,6 +62,7 @@ public class AppServiceSlideDataViewFragment extends Fragment {
 	private ArrayList<String> upoZillaName;
 	private int upoZillaId;
 	private String dayDifferent;
+	private VideoView video;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -79,7 +84,7 @@ public class AppServiceSlideDataViewFragment extends Fragment {
 				false);
 
 		webView = (WebView) v.findViewById(R.id.webview);
-
+		video = (VideoView) v.findViewById(R.id.video_app_service);
 		spZilla = (Spinner) v.findViewById(R.id.sp_zilla_immergency);
 		spUpoZilla = (Spinner) v.findViewById(R.id.sp_upozilla_immergency);
 		spType = (Spinner) v.findViewById(R.id.sp_type_immergency);
@@ -131,7 +136,7 @@ public class AppServiceSlideDataViewFragment extends Fragment {
 						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
 						+ getResources().getString(R.string.vaccination_info)
 						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul></body></html>";
-			}else if (getDays() >= 181 && getDays() <= 365) {
+			} else if (getDays() >= 181 && getDays() <= 365) {
 				mainService = "<html><body>"
 						+ getResources().getString(R.string.food_list)
 						+ "<ul><li>(seven to three ten), tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
@@ -141,7 +146,7 @@ public class AppServiceSlideDataViewFragment extends Fragment {
 						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
 						+ getResources().getString(R.string.vaccination_info)
 						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul></body></html>";
-			}else if (getDays() >= 366 && getDays() <= 545) {
+			} else if (getDays() >= 366 && getDays() <= 545) {
 				mainService = "<html><body>"
 						+ getResources().getString(R.string.food_list)
 						+ "<ul><li>(seven to three ten), tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
@@ -155,8 +160,16 @@ public class AppServiceSlideDataViewFragment extends Fragment {
 				mainService = "No data available";
 			}
 		} else if (isVideoService) {
+			/*btMore.setVisibility(View.GONE);
+			video.setVisibility(View.VISIBLE);
 			btMore.setVisibility(View.GONE);
 
+			video.setMediaController(new MediaController(getActivity()));
+			Uri url = Uri.parse("android.resource://"
+					+ getActivity().getPackageName() + "/" + R.raw.shakira);
+			video.setVideoURI(url);
+			video.start();
+*/
 		} else if (isImmergencyService) {
 			webView.setVisibility(View.GONE);
 			spType.setVisibility(View.VISIBLE);
@@ -252,9 +265,9 @@ public class AppServiceSlideDataViewFragment extends Fragment {
 				} else if (isMotherService) {
 					startActivity(new Intent(getActivity(),
 							MotherServiceAll.class));
-				}
-				else if(isChildService){
-					startActivity(new Intent(getActivity(), ChildServiceAll.class));
+				} else if (isChildService) {
+					startActivity(new Intent(getActivity(),
+							ChildServiceAll.class));
 				}
 
 			}

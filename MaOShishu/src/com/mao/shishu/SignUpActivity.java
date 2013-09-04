@@ -12,7 +12,9 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
@@ -94,11 +96,12 @@ public class SignUpActivity extends Activity implements
 					R.string.child_birth_date));
 		}
 
-		etPragnencyDate.setOnClickListener(new View.OnClickListener() {
+		etPragnencyDate.setOnTouchListener(new OnTouchListener() {
 
 			@Override
-			public void onClick(View arg0) {
+			public boolean onTouch(View arg0, MotionEvent arg1) {
 				showDialog(DATE_DIALOG_ID);
+				return false;
 			}
 		});
 
@@ -124,7 +127,7 @@ public class SignUpActivity extends Activity implements
 					int position, long id) {
 				adapterUpoZilla = new ArrayAdapter<String>(SignUpActivity.this,
 						android.R.layout.simple_spinner_item,
-						loadSpinnerDataUpoZilla(position + 1));
+						loadSpinnerDataUpoZilla(position));
 				adapterUpoZilla
 						.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 				spinnerUpoZilla.setAdapter(adapterUpoZilla);

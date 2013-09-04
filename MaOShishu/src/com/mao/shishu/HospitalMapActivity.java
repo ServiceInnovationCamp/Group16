@@ -2,6 +2,7 @@ package com.mao.shishu;
 
 import android.app.Activity;
 import android.os.Bundle;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -22,13 +23,13 @@ public class HospitalMapActivity extends Activity {
 				.findFragmentById(R.id.hospital_map);
 		GoogleMap googleMap = mapFragment.getMap();
 
-		LatLng sfLatLng = new LatLng(25.779895, 88.911667);
+		LatLng sfLatLng = new LatLng(37.7750, -122.4183);
 		googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 		googleMap.moveCamera(CameraUpdateFactory.newLatLng(sfLatLng));
 		googleMap.addMarker(new MarkerOptions()
 				.position(sfLatLng)
-				.title("Mukla.C")
-				.snippet("IIT_Konckout")
+				.title("San Francisco")
+				.snippet("Population: 776733")
 				.icon(BitmapDescriptorFactory
 						.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 	}

@@ -14,10 +14,10 @@ public class AppServiceSlideAdapter extends FragmentPagerAdapter {
 
 	public AppServiceSlideAdapter(FragmentManager fm) {
 		super(fm);
-		if (AppServiceMainActivity.isVideo)
-			PAGE_COUNT = 3;
-		else
-			PAGE_COUNT = 1;
+		/*
+		 * if (AppServiceMainActivity.isVideo) PAGE_COUNT = 3; else PAGE_COUNT =
+		 * 1;
+		 */
 	}
 
 	@Override
@@ -45,7 +45,6 @@ public class AppServiceSlideAdapter extends FragmentPagerAdapter {
 			header = header + " - " + position;
 		}
 		return header;
-
 	}
 
 }

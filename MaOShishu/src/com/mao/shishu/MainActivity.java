@@ -46,10 +46,11 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 
-/*				Intent intent = new Intent(MainActivity.this,
-						AppServiceMainActivity.class);
-				startActivity(intent);
-				finish();*/
+				/*
+				 * Intent intent = new Intent(MainActivity.this,
+				 * AppServiceMainActivity.class); startActivity(intent);
+				 * finish();
+				 */
 
 				showAlertInRegistration = new AlertDialog.Builder(
 						MainActivity.this)
@@ -66,7 +67,6 @@ public class MainActivity extends Activity {
 												SignUpActivity.class);
 										intent.putExtra("isForMom", true);
 										startActivity(intent);
-										finish();
 									}
 								})
 						.setNegativeButton(R.string.for_child,
@@ -80,7 +80,6 @@ public class MainActivity extends Activity {
 												SignUpActivity.class);
 										intent.putExtra("isForMom", false);
 										startActivity(intent);
-										finish();
 									}
 								}).create();
 				showAlertInRegistration.show();

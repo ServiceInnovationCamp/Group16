@@ -3,7 +3,6 @@
     android:id="@+id/linear_layout_root_signup"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#0c1c1c"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -56,89 +55,103 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <ScrollView
-        android:id="@+id/scrollview_signup"
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_linen_screen"
+        android:orientation="vertical"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp" >
+        android:paddingRight="10dp"
+        android:paddingTop="15dip" >
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_sign_up_error"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/signup_error"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/et_name"
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_common_form_field"
+            android:ems="10"
+            android:hint="@string/name"
+            android:paddingLeft="10dip" />
+
+        <EditText
+            android:id="@+id/et_pregnancy_date"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_common_form_field"
+            android:ems="10"
+            android:hint="@string/fragnency_data"
+            android:inputType="date"
+            android:paddingLeft="10dip" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp" >
+
+            <Spinner
+                android:id="@+id/sp_zilla"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/name" />
+                android:layout_height="40dp"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/editable_item_arrows" />
+        </RelativeLayout>
 
-            <EditText
-                android:id="@+id/et_pregnancy_date"
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp" >
+
+            <Spinner
+                android:id="@+id/sp_upozilla"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/fragnency_data" />
+                android:layout_height="40dp"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/editable_item_arrows" />
+        </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+        <EditText
+            android:id="@+id/et_mobile_number_1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_common_form_field"
+            android:ems="10"
+            android:hint="@string/mobile_one"
+            android:inputType="phone"
+            android:paddingLeft="10dip" />
 
-                <TextView
-                    android:id="@+id/tv_zilla"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="@string/zilla" />
+        <EditText
+            android:id="@+id/et_mobile_number_2"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_common_form_field"
+            android:ems="10"
+            android:hint="@string/mobile_two"
+            android:inputType="phone"
+            android:paddingLeft="10dip" />
 
-                <Spinner
-                    android:id="@+id/sp_zilla"
-                    android:layout_width="120dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:id="@+id/tv_upozilla"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="@string/upozilla" />
-
-                <Spinner
-                    android:id="@+id/sp_upozilla"
-                    android:layout_width="120dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp" />
-            </RelativeLayout>
-
-            <EditText
-                android:id="@+id/et_mobile_number_1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/mobile_one" />
-
-            <EditText
-                android:id="@+id/et_mobile_number_2"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/mobile_two" />
-
-            <Button
-                android:id="@+id/btn_sign_up"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/registration" />
-        </LinearLayout>
-    </ScrollView>
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/bt_bg_blue_half"
+            android:text="@string/registration"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </LinearLayout>

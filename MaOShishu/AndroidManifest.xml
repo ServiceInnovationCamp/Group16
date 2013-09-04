@@ -63,7 +63,8 @@
         <activity android:name="com.mao.shishu.childservice.ChildServiceSingleActivity" >
         </activity>
         <activity
-            android:name="com.mao.shishu.HospitalMapActivity">
+            android:name="com.mao.shishu.HospitalMapActivity"
+            android:theme="@android:style/Theme.Dialog" >
         </activity>
 
         <meta-data
