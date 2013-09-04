@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_listview_img"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:src="@drawable/module" >
+
+    <RelativeLayout
+        android:id="@+id/relative_header_m_single"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbar_fill"
+        android:orientation="horizontal"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp" >
+
+        <LinearLayout
+            android:id="@+id/linear_layout_m_single_back"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_m_single_highlited"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp" >
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back_m_single"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:baselineAlignBottom="false"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:paddingBottom="13dp"
+                    android:paddingTop="13dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/back" />
+
+                <ImageView
+                    android:id="@+id/image_view_back_m_single"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:paddingBottom="13dp"
+                    android:paddingTop="13dp"
+                    android:src="@drawable/sc" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <WebView
+            android:id="@+id/wv_child_service_single"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+</LinearLayout>

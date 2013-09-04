@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_listview_img"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relative_header_mother_service"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navbar_fill"
+        android:orientation="horizontal"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp" >
+
+        <LinearLayout
+            android:id="@+id/linear_layout_mother_service_back"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_mother_service_highlited"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp" >
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back_mother_service"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:baselineAlignBottom="false"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:paddingBottom="13dp"
+                    android:paddingTop="13dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/back" />
+
+                <ImageView
+                    android:id="@+id/image_view_back_mother_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:paddingBottom="13dp"
+                    android:paddingTop="13dp"
+                    android:src="@drawable/sc" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" >
+    </ListView>
+
+</LinearLayout>
