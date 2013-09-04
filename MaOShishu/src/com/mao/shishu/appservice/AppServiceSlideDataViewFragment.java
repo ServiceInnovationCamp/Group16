@@ -1,16 +1,22 @@
 package com.mao.shishu.appservice;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Set;
+
+import org.joda.time.DateTime;
+import org.joda.time.Days;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +31,9 @@ import com.mao.shishu.AdvisorActivity;
 import com.mao.shishu.DoctorProfileActivity;
 import com.mao.shishu.HotLineActivity;
 import com.mao.shishu.R;
+import com.mao.shishu.childservice.ChildServiceAll;
 import com.mao.shishu.motherservice.MotherServiceActivity;
+import com.mao.shishu.motherservice.MotherServiceAll;
 
 public class AppServiceSlideDataViewFragment extends Fragment {
 	private WebView webView;
@@ -48,7 +56,8 @@ public class AppServiceSlideDataViewFragment extends Fragment {
 	private int InfoTypePosition;
 	private HashMap<Integer, String> hashmap;
 	private ArrayList<String> upoZillaName;
-	int upoZillaId;
+	private int upoZillaId;
+	private String dayDifferent;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -78,17 +87,73 @@ public class AppServiceSlideDataViewFragment extends Fragment {
 		btMore = (Button) v.findViewById(R.id.btn_continue_reading);
 
 		if (isMotherService) {
-			mainService = "<html><body>"
-					+ getResources().getString(R.string.food_list)
-					+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
-					+ getResources().getString(R.string.suggested_work)
-					+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
-					+ getResources().getString(R.string.avaoidable_work)
-					+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
-					+ getResources().getString(R.string.vaccination_info)
-					+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul></body></html>";
+			if (getDays() >= 1 && getDays() <= 180) {
+				mainService = "<html><body>"
+						+ getResources().getString(R.string.food_list)
+						+ "<ul><li>(three to six month), tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.suggested_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.avaoidable_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.vaccination_info)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul></body></html>";
+			} else if (getDays() >= 181 && getDays() <= 270) {
+				mainService = "<html><body>"
+						+ getResources().getString(R.string.food_list)
+						+ "<ul><li>(seven to three ten), tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.suggested_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.avaoidable_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.vaccination_info)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul></body></html>";
+			} else {
+				mainService = "No data available";
+			}
 		} else if (isChildService) {
-
+			if (getDays() >= 1 && getDays() <= 90) {
+				mainService = "<html><body>"
+						+ getResources().getString(R.string.food_list)
+						+ "<ul><li>(three to six month), tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.suggested_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.avaoidable_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.vaccination_info)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul></body></html>";
+			} else if (getDays() >= 91 && getDays() <= 180) {
+				mainService = "<html><body>"
+						+ getResources().getString(R.string.food_list)
+						+ "<ul><li>(seven to three ten), tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.suggested_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.avaoidable_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.vaccination_info)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul></body></html>";
+			}else if (getDays() >= 181 && getDays() <= 365) {
+				mainService = "<html><body>"
+						+ getResources().getString(R.string.food_list)
+						+ "<ul><li>(seven to three ten), tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.suggested_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.avaoidable_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.vaccination_info)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul></body></html>";
+			}else if (getDays() >= 366 && getDays() <= 545) {
+				mainService = "<html><body>"
+						+ getResources().getString(R.string.food_list)
+						+ "<ul><li>(seven to three ten), tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.suggested_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.avaoidable_work)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul>"
+						+ getResources().getString(R.string.vaccination_info)
+						+ "<ul><li>Trim, tailored fit for a bespoke feel</li><li>Medium spread collar, one-button mitered barrel cuffs</li><li>Applied placket with genuine mother-of-pearl buttons</li><li>;Split back yoke, rear side pleats</li><li>Made in the U.S.A. of 100% imported cotton.</li></ul></body></html>";
+			} else {
+				mainService = "No data available";
+			}
 		} else if (isVideoService) {
 			btMore.setVisibility(View.GONE);
 
@@ -184,6 +249,12 @@ public class AppServiceSlideDataViewFragment extends Fragment {
 						startActivity(activityHotline);
 					}
 
+				} else if (isMotherService) {
+					startActivity(new Intent(getActivity(),
+							MotherServiceAll.class));
+				}
+				else if(isChildService){
+					startActivity(new Intent(getActivity(), ChildServiceAll.class));
 				}
 
 			}
@@ -232,6 +303,39 @@ public class AppServiceSlideDataViewFragment extends Fragment {
 				upoZillaId = entry.getKey();
 			}
 		}
+	}
+
+	public int getDays() {
+		SQLiteDatabase db = getActivity().openOrCreateDatabase("TestDB",
+				getActivity().MODE_PRIVATE, null);
+		Cursor cursor = db.rawQuery("select * from users", null);
+		String date = null;
+		if (cursor.moveToFirst()) {
+			do {
+				date = cursor.getString(1);
+			} while (cursor.moveToNext());
+		}
+
+		String dateStart = date;
+		String dateStop = new SimpleDateFormat("MM/dd/yyyy").format(Calendar
+				.getInstance().getTime());
+
+		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+		java.util.Date d1 = null;
+		java.util.Date d2 = null;
+
+		try {
+			d1 = format.parse(dateStart);
+			d2 = format.parse(dateStop);
+
+			DateTime dt1 = new DateTime(d1);
+			DateTime dt2 = new DateTime(d2);
+			dayDifferent = "" + Days.daysBetween(dt1, dt2).getDays();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return Integer.parseInt(dayDifferent);
 	}
 
 }

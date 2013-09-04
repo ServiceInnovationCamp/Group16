@@ -36,7 +36,6 @@ public class AppServiceSlideFragmentActivity extends FragmentActivity implements
 	private ImageButton ibBack;
 	private ImageView ivBack;
 	ViewPager pager;
-	public static String dayDifferent;
 
 	public static int pagenumber;
 
@@ -55,34 +54,7 @@ public class AppServiceSlideFragmentActivity extends FragmentActivity implements
 
 		pager.setCurrentItem(AppServiceMainActivity.CURRENT_PAGE);
 
-		SQLiteDatabase db = openOrCreateDatabase("TestDB", MODE_PRIVATE, null);
-		Cursor cursor = db.rawQuery("select * from users", null);
-		String date = null;
-		if (cursor.moveToFirst()) {
-			do {
-				date = cursor.getString(1);
-			} while (cursor.moveToNext());
-		}
-
-		String dateStart = date;
-		String dateStop = new SimpleDateFormat("MM/dd/yyyy").format(Calendar
-				.getInstance().getTime());
-
-		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
-		java.util.Date d1 = null;
-		java.util.Date d2 = null;
-
-		try {
-			d1 = format.parse(dateStart);
-			d2 = format.parse(dateStop);
-
-			DateTime dt1 = new DateTime(d1);
-			DateTime dt2 = new DateTime(d2);
-			dayDifferent = "" + Days.daysBetween(dt1, dt2).getDays();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	
 
 		animscale = AnimationUtils.loadAnimation(this, R.anim.scale);
 		animscale.setAnimationListener(this);

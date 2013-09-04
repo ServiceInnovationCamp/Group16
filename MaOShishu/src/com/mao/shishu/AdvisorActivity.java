@@ -41,8 +41,8 @@ public class AdvisorActivity extends Activity {
 	private void getDataForEmmergency() {
 
 		SQLiteDatabase db = openOrCreateDatabase("TestDB", MODE_PRIVATE, null);
-		String query = "select ha.ha_name, ha.ha_contact, h.hos_name,ha.hos_id from healthadvisor ha inner join hospital h on h.hos_id = h.hos_id where h.upozilla_id ='"
-				+ UpozZillaId + "' group by h.hos_id";
+		String query = "select ha.ha_name, ha.ha_contact, h.hos_name,ha.ha_id from healthadvisor ha inner join hospital h on h.hos_id = h.hos_id where h.upozilla_id ='"
+				+ UpozZillaId + "' group by ha.ha_id";
 		// "select * from '" + tableName + "' where upozilla_id='"
 		// + UpozZillaId + "'";
 

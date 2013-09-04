@@ -5,10 +5,22 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="12"
         android:targetSdkVersion="17" />
 
+    <permission
+        android:name="com.mao.shishu.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="com.mao.shishu.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -42,6 +54,26 @@
         </activity>
         <activity android:name="com.mao.shishu.AdvisorActivity" >
         </activity>
+        <activity android:name="com.mao.shishu.motherservice.MotherServiceAll" >
+        </activity>
+        <activity android:name="com.mao.shishu.motherservice.MotherServiceSingleActivity" >
+        </activity>
+        <activity android:name="com.mao.shishu.childservice.ChildServiceAll" >
+        </activity>
+        <activity android:name="com.mao.shishu.childservice.ChildServiceSingleActivity" >
+        </activity>
+        <activity
+            android:name="com.mao.shishu.HospitalMapActivity">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyD5xpsb8faJ-_QbywxIqDflEcbfKYEm2YU" />
     </application>
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" >
+    </uses-feature>
 
 </manifest>

@@ -29,11 +29,6 @@
     <string name="signin_for_which_message">নিজের জন্য হলে নিজের জন্য বাটনে ক্লিক করুন অন্যথায় সন্তানের জন্য বাটনে ক্লিক করুন</string>
     <string name="for_me">নিজের জন্য</string>
     <string name="for_child">সন্তানের জন্য</string>
-    <string name="during_pregnency_zero_three">০ থেকে ৩ মাস</string>
-    <string name="during_pregnency_four_five">৪ থেকে ৫ মাস</string>
-    <string name="during_pregnency_six_seven">৬ থেকে ৭ মাস</string>
-    <string name="during_pregnency_eight_nine">৮ থেকে ৯ মাস</string>
-    <string name="during_pregnency_ten">১০ম মাস</string>
     <string name="webview">বাংলা শারিফ</string>
     <string name="food_list">খাবার তালিকা</string>
     <string name="suggested_work">করনীয় কাজ</string>
@@ -45,6 +40,21 @@
         <item>চিকিৎসকের তথ্য</item>
         <item>স্বাস্থ্য কর্মীর তথ্য</item>
         <item>ফ্রি চিকিৎসা হটলাইন</item>
+    </string-array>
+    <string-array name="mothe_service_all">
+        <item>গর্ভাবস্থায় (৩ থেকে ৬ মাস)</item>
+        <item>গর্ভাবস্থায় (৭ থেকে ১০ মাস)</item>
+        <item>প্রসবের পর (১ থেকে ৩ মাস)</item>
+        <item>প্রসবের পর (৪ থেকে ৬ মাস)</item>
+        <item>প্রসবের পর (৭ থেকে ১২ মাস)</item>
+    </string-array>
+    
+        <string-array name="child_service_all">
+        <item>জন্মের পরপরই করণীয় </item>
+        <item>(০ - ৩)মাস বয়সী শিশুর জন্য</item>
+        <item>(৪ - ৬)মাস বয়সী শিশুর জন্য</item>
+        <item>(৭ - ১২)মাস বয়সী শিশুর জন্য</item>
+        <item>(১ - ১.৫)বছর বয়সী শিশুর জন্য</item>
     </string-array>
 
     <string name="show_imergency_info_btn_text">তথ্য দেখুন</string>

@@ -15,6 +15,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.gms.internal.cn;
+import com.mao.shishu.HospitalMapActivity;
 import com.mao.shishu.R;
 import com.mao.shishu.data.EmmergencyHostpitalData;
 
@@ -99,7 +101,8 @@ public class EmmergencyHospitalAdapter extends
 
 			@Override
 			public void onClick(View v) {
-				
+				context.startActivity(new Intent(context,
+						HospitalMapActivity.class));
 			}
 		});
 

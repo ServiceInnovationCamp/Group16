@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources.NotFoundException;
 import android.database.sqlite.SQLiteDatabase;
@@ -45,31 +46,45 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 
-				Intent intent = new Intent(MainActivity.this,
+/*				Intent intent = new Intent(MainActivity.this,
 						AppServiceMainActivity.class);
 				startActivity(intent);
-				finish();
+				finish();*/
 
-				/*
-				 * showAlertInRegistration = new AlertDialog.Builder(
-				 * MainActivity.this) .setTitle(R.string.signin_for_which)
-				 * .setMessage(R.string.signin_for_which_message)
-				 * .setPositiveButton(R.string.for_me, new
-				 * AlertDialog.OnClickListener() {
-				 * 
-				 * @Override public void onClick(DialogInterface arg0, int arg1)
-				 * { Intent intent = new Intent( MainActivity.this,
-				 * SignUpActivity.class); intent.putExtra("isForMom", true);
-				 * startActivity(intent); finish(); } })
-				 * .setNegativeButton(R.string.for_child, new
-				 * AlertDialog.OnClickListener() {
-				 * 
-				 * @Override public void onClick(DialogInterface dialog, int
-				 * which) { Intent intent = new Intent( MainActivity.this,
-				 * SignUpActivity.class); intent.putExtra("isForMom", false);
-				 * startActivity(intent); finish(); } }).create();
-				 * showAlertInRegistration.show();
-				 */
+				showAlertInRegistration = new AlertDialog.Builder(
+						MainActivity.this)
+						.setTitle(R.string.signin_for_which)
+						.setMessage(R.string.signin_for_which_message)
+						.setPositiveButton(R.string.for_me,
+								new AlertDialog.OnClickListener() {
+
+									@Override
+									public void onClick(DialogInterface arg0,
+											int arg1) {
+										Intent intent = new Intent(
+												MainActivity.this,
+												SignUpActivity.class);
+										intent.putExtra("isForMom", true);
+										startActivity(intent);
+										finish();
+									}
+								})
+						.setNegativeButton(R.string.for_child,
+								new AlertDialog.OnClickListener() {
+
+									@Override
+									public void onClick(DialogInterface dialog,
+											int which) {
+										Intent intent = new Intent(
+												MainActivity.this,
+												SignUpActivity.class);
+										intent.putExtra("isForMom", false);
+										startActivity(intent);
+										finish();
+									}
+								}).create();
+				showAlertInRegistration.show();
+
 			}
 		});
 
@@ -149,11 +164,12 @@ public class MainActivity extends Activity {
 
 	private void manageHealthAdvisor(SQLiteDatabase db) {
 		createHealthAdvisor(db);
-		String healthAdvisors = getResources().getString(R.string.healthadvisors);
+		String healthAdvisors = getResources().getString(
+				R.string.healthadvisors);
 		ArrayList<String> healthAdvisorList = new ArrayList<String>();
 		healthAdvisorList = getListFromString(healthAdvisors);
 		insertHealthAdvisor(db, healthAdvisorList);
-		
+
 	}
 
 	private void insertHealthAdvisor(SQLiteDatabase db,
@@ -166,16 +182,15 @@ public class MainActivity extends Activity {
 					+ "','"
 					+ healthAdvisorList.get(++i)
 					+ "','"
-					+ healthAdvisorList.get(++i)
-					+ "')");
+					+ healthAdvisorList.get(++i) + "')");
 		}
-		
+
 	}
 
 	private void createHealthAdvisor(SQLiteDatabase db) {
 		deleteTable(db, "healthadvisor");
 		db.execSQL("CREATE TABLE IF  NOT EXISTS healthadvisor(ha_id INTEGER PRIMARY KEY ,ha_name VARCHAR, ha_contact VARCHAR, hos_id INTEGER);");
-		
+
 	}
 
 	private void manageDoctor(SQLiteDatabase db) {
@@ -198,8 +213,7 @@ public class MainActivity extends Activity {
 					+ "','"
 					+ doctorList.get(++i)
 					+ "','"
-					+ doctorList.get(++i)
-					+ "')");
+					+ doctorList.get(++i) + "')");
 		}
 
 	}
@@ -239,9 +253,7 @@ public class MainActivity extends Activity {
 					+ hospitalList.get(++i)
 					+ "','"
 					+ hospitalList.get(++i)
-					+ "','"
-					+ hospitalList.get(++i)
-					+ "')");
+					+ "','" + hospitalList.get(++i) + "')");
 		}
 	}
 
@@ -345,6 +357,5 @@ public class MainActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 	}
-
 
 }
