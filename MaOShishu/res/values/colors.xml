@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <drawable name="yellow_splash">#80f0bc01</drawable>
+    <drawable name="trans">#e5e5e5</drawable>
+    <drawable name="transper">@android:color/transparent</drawable>
+
+</resources>

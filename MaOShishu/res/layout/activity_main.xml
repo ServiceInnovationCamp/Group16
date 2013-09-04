@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="0dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/transparent_panel"
+        android:background="@drawable/slider"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <ImageView
+            android:id="@+id/iv_current_select1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/current" />
+
+        <ImageView
+            android:id="@+id/iv_current_select2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/current" />
+
+        <ImageView
+            android:id="@+id/iv_current_select3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/current" />
+    </LinearLayout>
+
+    <com.mao.shishu.BottomSlideLayout
+        android:id="@+id/transparent_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="21dp"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:weightSum="1" >
+
+            <TextView
+                android:id="@+id/textview_sign_up"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight=".63"
+                android:background="@drawable/bg_onboard_menu"
+                android:gravity="center"
+                android:text="নিবন্ধন করুন"
+                android:textColor="@color/sign_up_text_color"
+                android:textSize="15sp"
+                android:textStyle="bold" >
+            </TextView>
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".1"
+                android:src="@drawable/div" />
+
+            <TextView
+                android:id="@+id/textview_Peek"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight=".36"
+                android:background="@drawable/bg_onboard_menu"
+                android:gravity="center"
+                android:text="ব্যবহার বিধি" 
+                android:textColor="@color/sign_up_text_color"
+                android:textSize="15sp"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+    </com.mao.shishu.BottomSlideLayout>
+
+</RelativeLayout>

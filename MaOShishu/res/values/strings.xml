@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="zillas">1,ফেনী,2,নীলফামারী</string>
+    <string name="upozillas">1,ফেনী সদর,1,2,সোনাগাজী,1,3,ছাগলনাইয়া,1,4,ফুলগাজী,1,5,পরশুরাম,1,6,দাগনভূঞা,1,7,নীলফামারী সদর,2,8,সৈয়দপুর,2,9,ডিমলা,2,10,ডোমার,2,12,কিশোরগঞ্জ ,2</string>
+    <string name="hotlines">1,নীলফামারী সদর হাসপাতাল-২,০১৫২০০৯০৫২৫,7,2,নীলফামারী সদর হাসপাতাল-৩,০১৫২০০৯০৫২৫,7,3,নীলফামারী সদর হাসপাতাল-৪,০১৫২০০৯০৫২৫,7,4,নীলফামারী সদর হাসপাতাল-৫,০১৫২০০৯০৫২৫,7,5,নীলফামারী সদর হাসপাতাল-১,০১৫২০০৯০৫২৫,7,6,সেবা ক্লিনিক সৈয়দপুর,০১৫২০০৯০৫২৫,8,7,রশিদা সদর হাসপাতাল,০১৫২০০৯০৫২৫,8,8,সৈদপুর সদর হাসপাতাল,০১৫২০০৯০৫২৫,8,9,সৈদপুর সদর হাসপাতাল-২,০১৫২০০৯০৫২৫,8,10,সৈয়দপুর হাসপাতাল,০১৫২০০৯০৫২৫,8</string>
+    <string name="hospitals">1,নীলফামারী সদর হাসপাতাল-২,নীলফামারী,প্রতিদিন,সকাল ১০টা হতে বিকাল ৪টা,23.88215,90.22488,7,01746969164,2,নীলফামারী সদর হাসপাতাল-৩,নীলফামারী,প্রতিদিন,সকাল ১০টা হতে বিকাল ৪টা,23.88215,90.22488,7,01746969164,3,নীলফামারী সদর হাসপাতাল-৪,নীলফামারী,প্রতিদিন,সকাল ১০টা হতে বিকাল ৪টা,23.88215,90.22488,7,01746969164,4,নীলফামারী সদর হাসপাতাল-৫,নীলফামারী,প্রতিদিন,সকাল ১০টা হতে বিকাল ৪টা,23.88215,90.22488,7,01746969164,5,নীলফামারী সদর হাসপাতাল-১,নীলফামারী,প্রতিদিন,সকাল ১০টা হতে বিকাল ৪টা,23.88215,90.22488,7,01746969164,6,সেবা ক্লিনিক সৈয়দপুর,সৈয়দপুর,প্রতিদিন,সকাল ১০টা হতে বিকাল ৪টা,23.88215,90.22488,8,01746969164,7,রশিদা সদর হাসপাতাল,সৈয়দপুর,প্রতিদিন,সকাল ১০টা হতে বিকাল ৪টা,23.88215,90.22488,8,01746969164,8,সৈদপুর সদর হাসপাতাল,সৈয়দপুর,প্রতিদিন,সকাল ১০টা হতে বিকাল ৪টা,823.88215,90.22488,8,01746969164,9,সৈদপুর সদর হাসপাতাল-২,সৈয়দপুর,প্রতিদিন,সকাল ১০টা হতে বিকাল ৪টা,23.88215,90.22488,8,01746969164,10,সৈয়দপুর হাসপাতাল,সৈয়দপুর,প্রতিদিন,সকাল ১০টা হতে বিকাল ৪টা,23.88215,90.22488,8,01746969164</string>
+    <string name="doctors">1,ডাঃ হাসিনুর রশিদ,01746969164,শিশু বিশেষজ্ঞ,7,2,ডাঃ আযিযুল হক,০১৫৬৬৬৬৬৬৬১,শিশু বিশেষজ্ঞ,7,3,ডাঃ মোঃ মহিউদ্দিন,০১৫৬৬৬৬৬৬৬১,শিশু বিশেষজ্ঞ,7,4,ডাঃ আয়েশা বেগম,০১৫৬৬৬৬৬৬৬১,শিশু বিশেষজ্ঞ,7,5,ডাঃ আযিযুল হক,০১৫৬৬৬৬৬৬৬১,শিশু বিশেষজ্ঞ,7,6,ডাঃ আশরাফুল ইসলাম ,০১৫৬৬৬৬৬৬৬১,শিশু বিশেষজ্ঞ,7,7,ডাঃ হাসানুল বারি,০১৫৬৬৬৬৬৬৬১,শিশু বিশেষজ্ঞ,7,8,ডাঃ মাহবুব আলম,০১৫৬৬৬৬৬৬৬১,শিশু বিশেষজ্ঞ,7</string>
+    <string name="healthadvisors">1,ডাঃ হাসিনুর রশিদ,০১৫৬৬৬৬৬৬৬১,7,2,ডাঃ আযিযুল হক,০১৫৬৬৬৬৬৬৬১,7,3,ডাঃ মোঃ মহিউদ্দিন,০১৫৬৬৬৬৬৬৬১,7,4,ডাঃ আয়েশা বেগম,০১৫৬৬৬৬৬৬৬১,7,5,ডাঃ আযিযুল হক,০১৫৬৬৬৬৬৬৬১,7,6,ডাঃ আশরাফুল ইসলাম ,০১৫৬৬৬৬৬৬৬১,7,7,ডাঃ হাসানুল বারি,০১৫৬৬৬৬৬৬৬১,7,8,ডাঃ মাহবুব আলম,০১৫৬৬৬৬৬৬৬১,7</string>
+    <string name="child_birth_date">শিশুর জন্ম তারিখ</string>
+    <string name="app_name">MaOShishu</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="username">নাম</string>
+    <string name="fragnency_data">গর্ভ ধারনের তারিখ</string>
+    <string name="zilla">জেলা</string>
+    <string name="upozilla">উপজেলা</string>
+    <string name="mobile_one">মোবাইল নাম্বার ১</string>
+    <string name="mobile_two">মোবাইল নাম্বার ২</string>
+    <string name="name">নাম</string>
+    <string name="registration">নিবন্ধন করুন</string>
+    <string name="update">আপডেট করুন</string>
+    <string name="services">সেবা সমূহ</string>
+    <string name="for_mom_main">মায়ের জন্য সেবা </string>
+    <string name="for_child_main">শিশুর জন্য সেবা</string>
+    <string name="video_instruction">ভিডিও নির্দেশিকা</string>
+    <string name="immergency_contact">জরুরী যোগাযোগ</string>
+    <string name="signin_for_which">আপনি কার জন্য নিবন্ধন করতে চান</string>
+    <string name="signin_for_which_message">নিজের জন্য হলে নিজের জন্য বাটনে ক্লিক করুন অন্যথায় সন্তানের জন্য বাটনে ক্লিক করুন</string>
+    <string name="for_me">নিজের জন্য</string>
+    <string name="for_child">সন্তানের জন্য</string>
+    <string name="during_pregnency_zero_three">০ থেকে ৩ মাস</string>
+    <string name="during_pregnency_four_five">৪ থেকে ৫ মাস</string>
+    <string name="during_pregnency_six_seven">৬ থেকে ৭ মাস</string>
+    <string name="during_pregnency_eight_nine">৮ থেকে ৯ মাস</string>
+    <string name="during_pregnency_ten">১০ম মাস</string>
+    <string name="webview">বাংলা শারিফ</string>
+    <string name="food_list">খাবার তালিকা</string>
+    <string name="suggested_work">করনীয় কাজ</string>
+    <string name="avaoidable_work">বর্জনীয় কাজ</string>
+    <string name="vaccination_info">টীকা তথ্য</string>
+
+    <string-array name="immergency_info_type_array">
+        <item>হাসপাতাল ও ক্লিনিক</item>
+        <item>চিকিৎসকের তথ্য</item>
+        <item>স্বাস্থ্য কর্মীর তথ্য</item>
+        <item>ফ্রি চিকিৎসা হটলাইন</item>
+    </string-array>
+
+    <string name="show_imergency_info_btn_text">তথ্য দেখুন</string>
+    <string name="location">অবস্থানঃ </string>
+    <string name="service_time">খোলা থাকেঃ </string>
+    <string name="openclose_time">সময়ঃ </string>
+    <string name="mobile_number">মোবাইলঃ </string>
+
+</resources>
